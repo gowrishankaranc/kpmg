@@ -17,7 +17,7 @@ To deploy the 3-tier environment, follow these steps:
 1. Clone the repository:
 
    ```shell
-   git clone <repository-url>
+    git clone <repository-url>
 
 2.Initialize the Terraform configuration:
 
