@@ -1,43 +1,33 @@
-# Azure Instance Metadata Query (JavaScript)
+# Azure Instance Metadata Retrieval
 
-This repository contains a JavaScript code snippet that demonstrates how to query the metadata of an Azure instance using Node.js. The code sends an HTTP GET request to the Azure Instance Metadata Service (IMDS) endpoint and retrieves various properties of the instance.
+This script demonstrates how to retrieve metadata from Azure instances using the Azure Instance Metadata Service (IMDS) in Python.
 
 ## Prerequisites
 
-Before running the code, ensure that you have the following:
+- Python 3.x
+- `requests` library (can be installed using `pip install requests`)
 
-- Node.js installed on your system. You can download it from the official [Node.js website](https://nodejs.org).
+## Usage
 
-## Getting Started
+1. Install the required libraries by running the following command:
 
-1. Clone this repository to your local machine or download the JavaScript file.
+   ```bash
+   pip install requests
+   ```
 
-2. Open a terminal or command prompt and navigate to the project directory.
- 
-3. Install the necessary dependencies by running the following command:
+2. Copy and paste the code into a Python file (e.g., `azure_vm_metadata.py`).
 
-   ```shell
-   npm install node-fetch
+3. Run the script using the following command:
 
-Steps for Run:
+   ```bash
+   azure_vm_metadata.py
+   ```
 
-1.Open the JavaScript file (query-instance-metadata.js) in a text editor.
+## Explanation
 
-2.Optionally, modify the code to access additional or specific metadata properties based on your requirements.
+1. The script uses the `requests` library to send HTTP requests to the Azure Instance Metadata Service.
+2. The `get_metadata` function is responsible for retrieving metadata from a specific path in the instance metadata service. It appends the path to the base metadata URL and sends a GET request with the `Metadata` header set to `'true'`.
+3. The `print_metadata` function iterates over the metadata dictionary and prints each key-value pair.
+4. In the `main` function, the script retrieves the root metadata by calling `get_metadata("/")` and then prints the metadata using `print_metadata`.
 
-3.Save the file and return to the terminal or command prompt.
-
-4.Execute the JavaScript code by running the following command:
-  node query-instance-metadata.js
-
-The code will send a request to the Azure IMDS endpoint and display the retrieved metadata properties in the console.
-
-Notes
-The code uses the node-fetch library to make HTTP requests. It is included as a dependency in the package.json file.
-
-Ensure that your Azure instance has access to the IMDS. By default, Azure instances have access to the IMDS endpoint (http://169.254.169.254). If you encounter any issues, ensure that the endpoint address is correct for your environment.
-
-References
-Azure Instance Metadata Service (IMDS) Documentation
-Node.js Documentation
-node-fetch on npm
+Note: Ensure that the script is running within an Azure instance, as the Azure Instance Metadata Service is only available within Azure instances.

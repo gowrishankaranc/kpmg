@@ -1,4 +1,9 @@
-azure_subscription_id = "<your-azure-subscription-id>"
-azure_client_id       = "<your-azure-client-id>"
-azure_client_secret   = "<your-azure-client-secret>"
-azure_tenant_id       = "<your-azure-tenant-id>"
+azure_subscription_id = ""
+azure_client_id       = ""
+azure_client_secret   = ""
+azure_tenant_id       = ""
+storage_account_name = ""
+container_name = ""
+key = ""
+access_key = ""
+  
